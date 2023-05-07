@@ -1,7 +1,6 @@
 class Pepshi < Drink
   PRICE = 150
-  NAME = "pepshi"
-
+  NAME = 'pepshi'
 
   def name
     NAME
