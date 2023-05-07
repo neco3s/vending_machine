@@ -1,0 +1,3 @@
+class Suica
+
+end

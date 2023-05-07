@@ -1,0 +1,3 @@
+class Juice
+
+end
