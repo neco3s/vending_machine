@@ -1,6 +1,6 @@
 class Pepshi < Drink
   PRICE = 150
-  NAME = 'pepshi'
+  NAME = 'pepshi'.freeze
 
   def name
     NAME
