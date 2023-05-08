@@ -17,8 +17,8 @@ class Suica
   end
 
   def purchase(drink_price)
-    p "before purchase balance: #{@balance}"
-    p "scope purchase drink_price: #{drink_price}"
+    raise "残高が足りません!" if @balance < drink_price
+
     @balance -= drink_price
   end
 

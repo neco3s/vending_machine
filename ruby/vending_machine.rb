@@ -78,10 +78,10 @@ class VendingMachine
 
   def purchasable?(suica)
     raise '在庫がありません！' unless available?(@selected_drink)
-    raise 'お金が足りません！' unless enough_money?(suica)
+    # raise 'お金が足りません！' unless enough_money?(suica)
 
-    # 在庫がある && 残高も足りている
-    available?(@selected_drink) && enough_money?(suica)
+    # 在庫がある
+    available?(@selected_drink) #&& enough_money?(suica)
   end
 
   def available?(drink)
@@ -169,7 +169,8 @@ p ''
 # p '---- vm.touch(my_suica) ----'
 # p vm.touch(my_suica)
 # p ''
-#=> ruby/vending_machine.rb:65:in `purchasable?': お金が足りません！ (RuntimeError)
+# => ruby/suica.rb:20:in `purchase': 残高が足りません! (RuntimeError)
+# => ruby/vending_machine.rb:65:in `purchasable?': お金が足りません！ (RuntimeError)
 
 # p '---- my_suica.balance ----'
 # p my_suica.charge(70)
