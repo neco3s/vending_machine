@@ -1,9 +1,14 @@
 class Drink
+
+  def initialize(name,price)
+    @name = name
+    @price = price
+  end
   def name
-    raise "must be implemented in subclass"
+    @name
   end
 
   def price
-    raise "must be implemented in subclass"
+    @price
   end
 end

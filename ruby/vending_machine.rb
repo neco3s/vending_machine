@@ -1,8 +1,4 @@
 require_relative './drink'
-require_relative './drink/pepshi'
-require_relative './drink/monster'
-require_relative './drink/irohasu'
-
 require_relative './suica'
 
 class VendingMachine
@@ -95,11 +91,11 @@ class VendingMachine
   def drink_price
     case @selected_drink
     in :pepshi
-      drink_price = Pepshi::PRICE
+      drink_price = @stock[:pepshi][-1].price
     in :monster
-      drink_price = Monster::PRICE
+      drink_price = @stock[:monster][-1].price
     in :irohasu
-      drink_price = Irohasu::PRICE
+      drink_price = @stock[:irohasu][-1].price
     end
     drink_price
   end
@@ -112,15 +108,15 @@ class VendingMachine
     case drink
     in :pepshi
       @stock[:pepshi] ||= []
-      drink = Pepshi.new
+      drink = Drink.new(:pepshi,150)
       @stock[:pepshi] << drink
     in :monster
       @stock[drink] ||= []
-      drink = Monster.new
+      drink = Drink.new(:monster,230)
       @stock[:monster] << drink
     in :irohasu
       @stock[drink] ||= []
-      drink = Irohasu.new
+      drink = Drink.new(:irohasu,120)
       @stock[:irohasu] << drink
     end
   end
